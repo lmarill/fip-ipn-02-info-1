@@ -18,6 +18,7 @@ class Animal:
     def __init__(self, nom, classification):
         self._nom = nom
         self._classification = classification
+        print("L'animal : " + self._nom + " à été crée |type : " + str(self._classification))
 
     @property
     def classification(self):
@@ -28,8 +29,15 @@ class Chat(Animal):
 
     def __init__(self, nom, classification):
         super().__init__(nom, classification)
-        print("Le chat : " + self._nom + " à était crée")
+        print("Le chat : " + self._nom + " à été crée |type : " + str(self._classification))
+
+class Chien(Animal):
+
+    def __init__(self, nom, classification):
+        super().__init__(nom, classification)
+        print("Le chien : " + self._nom + " à été crée |type : " + str(self._classification))
 
 
+chat = Animal("Osama", Classification.MAMIFERE)
 chat = Chat("Minou", Classification.MAMIFERE)
-print(chat.classification)
+chat = Chien("Rheun", Classification.MAMIFERE)
