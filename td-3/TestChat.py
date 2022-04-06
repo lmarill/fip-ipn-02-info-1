@@ -16,7 +16,7 @@ class TestChat(unittest.TestCase):
         self.assertEqual(chat.isCute, True)
 
     def test_constructor_2(self):
-        self.assertRaises(ArgumentTypeError,Chat.Chat,2)
+        self.assertRaises(ArgumentTypeError, Chat.Chat, 2)
 
     # def test_returnOne(self):
     #     self.assertEqual(returnOne(), 2)
