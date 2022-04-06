@@ -50,4 +50,4 @@ class Chien(Animal):
 animal = Animal("Osama", Classification.MAMIFERE)
 chat = Chat("Minou", Classification.MAMIFERE)
 chien = Chien("Rheun", Classification.MAMIFERE)
-
+print("quentin")
