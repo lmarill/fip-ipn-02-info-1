@@ -42,7 +42,6 @@ class Chat(Animal):
 
 
 class Chien(Animal):
-
     def __init__(self, nom, classification):
         super().__init__(nom, classification)
         print("Le chien : " + self._nom + " à été crée |type : " + str(self._classification))
@@ -53,11 +52,11 @@ chat = Chat("Minou", Classification.MAMIFERE)
 chien = Chien("Rheun", Classification.MAMIFERE)
 
 if chat.isCute:
-    print(chat._nom + " est mignon")
+    print(chat.nom + " est mignon")
 else:
-    print(chat._nom + " est pas mignon")
+    print(chat.nom + " est pas mignon")
 
 if chien.isCute:
-    print(chien._nom + " est mignon")
+    print(chien.nom + " est mignon")
 else:
-    print(chien._nom + " est pas mignon")
+    print(chien.nom + " est pas mignon")
