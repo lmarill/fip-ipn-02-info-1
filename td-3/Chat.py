@@ -16,18 +16,22 @@ class Animal:
     _nom = ""
     _classification = None
     _isCute = False
+    _age = 0
 
-    def __init__(self, nom, classification, cutness=False):
+    def __init__(self, nom, classification, age=0, cutness=False):
         if not isinstance(nom, str):
             raise ArgumentTypeError("must be string")
         if not isinstance(classification, Classification):
             raise ArgumentTypeError("must be Classification")
         if not isinstance(cutness, bool):
             raise ArgumentTypeError("must be boolean")
+        if not isinstance(age, int):
+            raise ArgumentTypeError("must be int")
 
         self._nom = nom
         self._classification = classification
         self._isCute = cutness
+        self._age = age
         # print("L'animal : " + self._nom + " à été crée |type : " + str(self._classification))
 
     @property
@@ -42,19 +46,21 @@ class Animal:
     def nom(self):
         return self._nom
 
+    @property
+    def age(self):
+        return self._age
+
 
 class Chat(Animal):
-    def __init__(self, nom, classification=Classification.MAMIFERE):
-        super().__init__(nom, classification, True)
+    def __init__(self, nom, classification=Classification.MAMIFERE, age=0):
+        super().__init__(nom, classification, age, True)
         # print("Le chat : " + self._nom + " à été crée |type : " + str(self._classification))
 
 
 class Chien(Animal):
-    def __init__(self, nom, classification):
-        super().__init__(nom, classification)
+    def __init__(self, nom, classification=Classification.MAMIFERE, age=0):
+        super().__init__(nom, classification, age)
         # print("Le chien : " + self._nom + " à été crée |type : " + str(self._classification))
 
-
-animal = Animal("Osama", Classification.MAMIFERE)
-chat = Chat("Minou", Classification.MAMIFERE)
-chien = Chien("Rheun", Classification.MAMIFERE)
+chat = Chat("Minou")
+chien = Chien("Rheun")
