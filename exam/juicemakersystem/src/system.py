@@ -46,14 +46,14 @@ if __name__ == "__main__":
 
     # Bill check for an order, can we prepare this order?
     bill.checkOrder(order, reserve)
-    print("you ordered for:\n -%s" % ("\n- ".join("%d %s for $%d" %(qte, juice.name, qte * juice.price) for juice, qte in order.items())))
+    print("you ordered for:\n -%s" % ("\n- ".join("%d %s for $%d (u: $%d/%s)" %(qte, juice.name, qte * juice.price, juice.price, juice.size.name) for juice, qte in order.items())))
 
     # Bill give the bill of the order, validate the command and take the money
     totalPrice = bill.giveTheBillForOrder()
     print("total price of the order: $%d" % totalPrice)
     bill.validateOrder()
     (payed, remains) = bill.getMoneyForOrder(totalPrice)
-    print("payed? %s (remains=%d)" % (payed, remains))
+    print("payed? %s (remains=$%d)" % (payed, remains))
 
     # Bill prepare the order
     juices = bill.prepareOrder(reserve)
