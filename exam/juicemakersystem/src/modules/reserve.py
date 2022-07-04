@@ -25,7 +25,7 @@ class Reserve():
         if self._recipes is None:
             raise BaseException('cannot check availibility, no recipes specify!')
         
-        if self._recipes is None:
+        if self._ingredients is None:
             raise BaseException('cannot check availibility, no ingredients specify!')
 
         juices = {}
