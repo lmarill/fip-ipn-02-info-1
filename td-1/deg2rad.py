@@ -1,5 +1,3 @@
-
-
 def  deg_rad(angle):
 
 	rad = angle * ((2*3.14)/360)
